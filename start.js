@@ -59,15 +59,19 @@ const main = async () => {
   while (attempt < retry) {
     console.log('Push attempt ' + attempt + '...');
     ++attempt;
-    await exec('bash', [path.join(__dirname, './start.sh')], {
-      env: {
-        ...process.env,
-        INPUT_BRANCH: branch,
-        INPUT_REPOSITORY: repository,
-        INPUT_GITHUB_URL_PROTOCOL: github_url_protocol,
-        INPUT_GITHUB_URL: github_url,
-      }
-    });
+    try {
+      await exec('bash', [path.join(__dirname, './start.sh')], {
+        env: {
+          ...process.env,
+          INPUT_BRANCH: branch,
+          INPUT_REPOSITORY: repository,
+          INPUT_GITHUB_URL_PROTOCOL: github_url_protocol,
+          INPUT_GITHUB_URL: github_url,
+        }
+      });
+    } catch (err) {
+      console.error(err.toString());
+    }
   }
 };
 
