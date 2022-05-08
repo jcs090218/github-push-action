@@ -30,6 +30,10 @@ inputs:
     description: 'Directory to change to before pushing.'
     required: false
     default: '.'
+  retry:
+    description: 'Retry attempts'
+    required: false
+    default: 1
 runs:
   using: 'node12'
   main: 'start.js'
