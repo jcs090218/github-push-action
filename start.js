@@ -57,6 +57,7 @@ const main = async () => {
   let attempt = 0;
 
   while (attempt < retry) {
+    console.log('Push attempt ' + attempt + '...');
     ++attempt;
     await exec('bash', [path.join(__dirname, './start.sh')], {
       env: {
