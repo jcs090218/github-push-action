@@ -1,6 +1,6 @@
-name: 'GitHub Push'
+name: 'Push to repository'
 description: 'Pushing to GitHub repository local changes'
-author: 'ad-m'
+author: 'Jen-Chieh Shen'
 branding:
   icon: upload-cloud
   color: green
