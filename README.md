@@ -41,14 +41,16 @@ jobs:
 
 ### Inputs
 
-| name | value | default | description |
-| ---- | ----- | ------- | ----------- |
-| github_token | string  |  `${{ github.token }}` | [GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow) <br /> or a repo scoped <br /> [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). |
-| branch | string | (default) | Destination branch to push changes. <br /> Can be passed in using `${{ github.ref }}`. |
-| force | boolean | false | Determines if force push is used. |
-| tags | boolean | false | Determines if `--tags` is used. |
-| directory | string | '.' | Directory to change to before pushing. |
-| repository | string | '' | Repository name. <br /> Default or empty repository name represents <br /> current github repository. <br /> If you want to push to other repository, <br /> you should make a [personal access token](https://github.com/settings/tokens) <br /> and use it as the `github_token` input.  |
+| name         | value   | default               | description                                                                                                                                                                                                                                                                                                     |
+|--------------|---------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| github_token | string  | `${{ github.token }}` | [GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow) <br /> or a repo scoped <br /> [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). |
+| branch       | string  | (default)             | Destination branch to push changes. <br /> Can be passed in using `${{ github.ref }}`.                                                                                                                                                                                                                          |
+| rebase       | boolean | false                 | Rebase before push                                                                                                                                                                                                                                                                                              |
+| force        | boolean | false                 | Determines if force push is used.                                                                                                                                                                                                                                                                               |
+| tags         | boolean | false                 | Determines if `--tags` is used.                                                                                                                                                                                                                                                                                 |
+| directory    | string  | '.'                   | Directory to change to before pushing.                                                                                                                                                                                                                                                                          |
+| repository   | string  | ''                    | Repository name. <br /> Default or empty repository name represents <br /> current github repository. <br /> If you want to push to other repository, <br /> you should make a [personal access token](https://github.com/settings/tokens) <br /> and use it as the `github_token` input.                       |
+| retry        | integer | 1                     | Retry attempts                                                                                                                                                                                                                                                                                                  |
 
 ## Troubeshooting
 
